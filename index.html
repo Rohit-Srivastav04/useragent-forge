@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UserAgent Forge — Generate 1 Lakh+ User Agents</title>
+  <meta name="description" content="Generate up to 100,000 realistic user agents for Windows, Linux, macOS, Android, and iOS. Download TXT or JSON." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <strong>UserAgent Forge</strong>
+        <p>Platform-true UA factory · up to 1,00,000 each</p>
+      </div>
+    </div>
+    <a class="gh" href="https://github.com/Rohit-Srivastav04" target="_blank" rel="noreferrer">GitHub</a>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <p class="kicker">Free · Browser-side · No signup</p>
+      <h1>USERAGENT<br /><span>FORGE</span></h1>
+      <p class="lead">
+        Pick a platform, set form factor, generate up to <strong>1 lakh</strong> unique user agents,
+        then download as <strong>TXT</strong> or <strong>JSON</strong>.
+      </p>
+    </section>
+
+    <section class="panel" aria-label="Generator controls">
+      <div class="grid">
+        <label class="field">
+          <span>Platform</span>
+          <select id="platform">
+            <option value="windows">Windows</option>
+            <option value="linux">Linux</option>
+            <option value="macos">macOS</option>
+            <option value="android">Android</option>
+            <option value="ios">iOS</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Form factor</span>
+          <select id="formFactor">
+            <option value="auto">Auto (platform default)</option>
+            <option value="desktop">Desktop</option>
+            <option value="mobile">Mobile</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Browser flavor</span>
+          <select id="browser">
+            <option value="mixed">Mixed (Chrome / Edge / Firefox / Safari)</option>
+            <option value="chrome">Chrome-like</option>
+            <option value="edge">Edge</option>
+            <option value="firefox">Firefox</option>
+            <option value="safari">Safari</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Count (1 – 1,00,000)</span>
+          <input id="count" type="number" min="1" max="100000" value="1000" />
+        </label>
+      </div>
+
+      <div class="presets" role="group" aria-label="Quick counts">
+        <button type="button" data-count="100">100</button>
+        <button type="button" data-count="1000">1,000</button>
+        <button type="button" data-count="10000">10,000</button>
+        <button type="button" data-count="50000">50,000</button>
+        <button type="button" data-count="100000">1,00,000</button>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn primary" id="generate">Generate</button>
+        <button type="button" class="btn" id="downloadTxt" disabled>Download TXT</button>
+        <button type="button" class="btn" id="downloadJson" disabled>Download JSON</button>
+        <button type="button" class="btn ghost" id="clear" disabled>Clear</button>
+      </div>
+
+      <div class="progress wrap" hidden id="progressWrap">
+        <div class="bar"><i id="progressBar"></i></div>
+        <p id="progressText">Preparing…</p>
+      </div>
+
+      <div class="meta" id="meta">No agents yet. Choose platform and generate.</div>
+    </section>
+
+    <section class="preview panel">
+      <div class="preview-head">
+        <h2>Preview</h2>
+        <p>First 50 shown. Full set goes to download.</p>
+      </div>
+      <pre id="preview" class="preview-box" aria-live="polite">—</pre>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Client-side only · data never leaves your browser</span>
+    <span>Windows · Linux · macOS · Android · iOS</span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
